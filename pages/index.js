@@ -1,14 +1,26 @@
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>Karthik @ Work</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">Hey, I'm Karthik Kumar</h1>
+      <main className="content">
+        <div id="profilePic">
+          <Image
+            src="/images/profile-pic.png"
+            height={200}
+            width={200}
+            alt="profile pic"
+          />
+        </div>
+        <h1 className="title">
+          Hey, <br /> I'm Karthik Kumar
+        </h1>
       </main>
 
       <style jsx>{`
@@ -32,7 +44,25 @@ export default function Home() {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          border-radius: 10px;
+          border-radius: 1rem;
+        }
+
+        .content {
+          width: 100%;
+          flex: 1;
+          display: flex;
+          gap: 2rem;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #profilePic {
+          width: 10rem;
+          height: 10rem;
+          background-color: #302f2f;
+          border: 4px solid #494848;
+          border-radius: 1rem;
         }
 
         .title {
@@ -40,8 +70,8 @@ export default function Home() {
           text-decoration: none;
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
-          text-align: center;
+          font-size: 3rem;
+          text-align: left;
         }
 
         .description {
