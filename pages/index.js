@@ -9,18 +9,38 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="content">
-        <div id="profilePic">
-          <Image
-            src="/images/profile-pic.png"
-            height={200}
-            width={200}
-            alt="profile pic"
-          />
+      <main>
+        <div id="navbar">
+          <div id="go-home">home</div>
+          <div id="nav-items">
+            <span>profile</span>
+            <span>work</span>
+            <span>blog</span>
+          </div>
         </div>
-        <h1 className="title">
-          Hey, <br /> I'm Karthik Kumar
-        </h1>
+        <div id="content-wrapper">
+          <div id="content">
+            <div id="profilePic">
+              <Image
+                src="/images/profile-pic.png"
+                height={200}
+                width={200}
+                alt="profile pic"
+              />
+            </div>
+            <div id="profile-summary">
+              <h1 className="title">
+                Hey, <br /> I'm Karthik Kumar
+              </h1>
+              <p>Product Engineer</p>
+              <p>
+                As a perpetual learner, my career has taken me from being an iOS
+                developer to frontend developer to full-stack developer and
+                eventually becoming a product engineer
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
 
       <style jsx>{`
@@ -47,7 +67,33 @@ export default function Home() {
           border-radius: 1rem;
         }
 
-        .content {
+        #navbar {
+          height: 100px;
+          width: 90%;
+          border-bottom: 2px solid #2c2c2c;
+          color: #f5f5f5;
+          font-size: 1.5rem;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-end;
+          padding: 0 2rem;
+        }
+
+        #nav-items {
+          display: flex;
+          gap: 3rem;
+        }
+
+        #content-wrapper {
+          flex: 1;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #content {
           width: 100%;
           flex: 1;
           display: flex;
@@ -63,10 +109,19 @@ export default function Home() {
           background-color: #302f2f;
           border: 4px solid #494848;
           border-radius: 1rem;
+          align-self: flex-start;
+        }
+
+        #profile-summary {
+          flex: 1;
+          display: flex;
+          gap: 0.6rem;
+          flex-direction: column;
+          color: #f5f5f5;
+          width: 500px;
         }
 
         .title {
-          color: #fff;
           text-decoration: none;
           margin: 0;
           line-height: 1.15;
