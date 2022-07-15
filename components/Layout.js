@@ -3,16 +3,17 @@ import NavBar from "./NavBar";
 
 export default function Layout({ children }) {
   return (
-    <div id="container">
+    <>
       <Head>
         <title>Karthik @ Work</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div id="contentArea">
-        <NavBar />
-        {children}
+      <div id="container">
+        <div id="contentArea">
+          <NavBar />
+          {children}
+        </div>
       </div>
-
       <style jsx>{`
         #container {
           background-color: #191919;
@@ -25,6 +26,7 @@ export default function Layout({ children }) {
         }
 
         #contentArea {
+          width: 100%;
           max-width: 1200px;
           min-width: 1000px;
           background-color: #000;
@@ -37,6 +39,6 @@ export default function Layout({ children }) {
           border-radius: 1rem;
         }
       `}</style>
-    </div>
+    </>
   );
 }
