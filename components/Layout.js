@@ -8,35 +8,30 @@ export default function Layout({ children }) {
         <title>Karthik @ Work</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div id="container">
-        <div id="contentArea">
-          <NavBar />
-          {children}
-        </div>
+      <div id="app">
+        <NavBar />
+        <div id="container">{children}</div>
       </div>
       <style jsx>{`
-        #container {
+        #app {
+          width: 100vw;
+          height: 100vh;
           background-color: #191919;
-          min-height: 100vh;
-          padding: 0 0.5rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         }
 
-        #contentArea {
+        #container {
           width: 100%;
+          height: 100%;
           max-width: 1200px;
           min-width: 1000px;
           background-color: #000;
           margin: 1rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
           border-radius: 1rem;
+          overflow: hidden;
         }
       `}</style>
     </>

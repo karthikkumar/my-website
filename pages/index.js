@@ -3,33 +3,45 @@ import Image from "next/image";
 export default function Index() {
   return (
     <>
-      <div id="content-wrapper">
-        <div id="content">
-          <div id="profile-pic">
-            <Image
-              src="/images/profile-pic.png"
-              height={200}
-              width={200}
-              alt="profile pic"
-            />
-          </div>
-          <div id="profile-summary">
-            <h1 className="title">
-              Hey, <br /> I'm Karthik Kumar
-            </h1>
-            <p>Product Engineer</p>
-            <p>
-              As a perpetual learner, my career has taken me from being an iOS
-              developer to frontend developer to full-stack developer and
-              eventually becoming a product engineer
-            </p>
+      <div id="center">
+        <div id="content-wrapper">
+          <div id="content">
+            <div id="profile-pic">
+              <Image
+                src="/images/profile-pic.png"
+                height={200}
+                width={200}
+                alt="profile pic"
+              />
+            </div>
+            <div id="profile-summary">
+              <h1 className="title">
+                Hey, <br /> I'm Karthik Kumar
+              </h1>
+              <p>Product Engineer</p>
+              <p>
+                As a perpetual learner, my career has taken me from being an iOS
+                developer to frontend developer to full-stack developer and
+                eventually becoming a product engineer
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <style jsx>{`
-        #content-wrapper {
-          flex: 1;
+        #center {
+          width: 100%;
+          height: 100%;
           display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #content-wrapper {
+          display: flex;
+          flex: 1;
           flex-direction: row;
           justify-content: center;
           align-items: center;
@@ -37,8 +49,8 @@ export default function Index() {
 
         #content {
           width: 100%;
-          flex: 1;
           display: flex;
+          flex: 1;
           gap: 2rem;
           flex-direction: row;
           justify-content: center;
