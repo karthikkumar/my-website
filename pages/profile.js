@@ -81,7 +81,7 @@ export default function Profile() {
               height={10}
               alt="download"
             />
-            <span style={{ paddingLeft: "5px" }}>resume</span>
+            <span className="button-label">Resume</span>
           </button>
         </div>
         <div id="work-experience">
@@ -278,11 +278,11 @@ export default function Profile() {
         }
 
         h1.page-title {
-          color: #fff;
+          color: #f5f5f5;
         }
 
         button.resume {
-          width: 90px;
+          width: 98px;
           height: 30px;
           text-align: right;
           padding: 5px 15px;
@@ -290,6 +290,10 @@ export default function Profile() {
           background-color: #343434;
           border-width: 0;
           border-radius: 15px;
+        }
+
+        .button-label {
+          padding-left: 8px;
         }
 
         #work-experience {
