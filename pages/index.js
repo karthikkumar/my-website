@@ -23,7 +23,7 @@ export default function Index() {
               <h1 className="title">
                 Hey, <br /> I'm Karthik Kumar
               </h1>
-              <p>Product Engineer</p>
+              <p>Software Engineer</p>
               <p className="description">
                 As a perpetual learner, my career has taken me from being an iOS
                 developer to frontend developer to full-stack developer and

@@ -16,7 +16,7 @@ export default function Layout({ children }) {
         #app {
           width: 100vw;
           height: 100vh;
-          background-color: #191919;
+          background-color: #090909;
           display: flex;
           flex-direction: column;
           justify-content: center;

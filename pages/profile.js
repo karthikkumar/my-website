@@ -13,7 +13,7 @@ function BulletPoint({ className, title, subtitle, description }) {
       </div>
       <style jsx>{`
         .point {
-          margin: 1rem 0;
+          margin: 2rem 0 1rem 0;
         }
 
         .bullet {
@@ -35,14 +35,14 @@ function BulletPoint({ className, title, subtitle, description }) {
         .subtitle {
           margin-left: 0.5rem;
           color: #bcbcbc;
-          font-size: 1rem;
-          font-weight: 500;
+          font-size: 0.9rem;
+          font-weight: 400;
         }
 
         .description {
           color: #f5f5f5;
-          font-size: 0.9rem;
-          font-weight: 200;
+          font-size: 1rem;
+          font-weight: 300;
           border-left: 1px solid #3b3b3b;
           padding: 0 0 1rem 0.5rem;
           margin-left: 0.25rem;
@@ -290,6 +290,7 @@ export default function Profile() {
           background-color: #343434;
           border-width: 0;
           border-radius: 15px;
+          cursor: pointer;
         }
 
         .button-label {
@@ -297,13 +298,13 @@ export default function Profile() {
         }
 
         #work-experience {
-          padding: 1rem;
+          padding: 2rem 4rem 2rem 0;
           width: 100%;
           height: 100%;
         }
 
         #skills {
-          padding: 1rem;
+          padding: 2rem 2rem 2rem 3rem;
           width: 100%;
           height: 100%;
           border-left: 2px solid #212121;

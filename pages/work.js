@@ -44,12 +44,12 @@ export default function Work() {
               <TOHNLogo />
             </div>
             <div className="description">
-              Why The Times of Hacker News (TOHN)? because, Y Combinator's
-              Hacker News doesn't have an option to read only the top news (by
-              score, not by rank) for a given date. TOHN is just an aggregator,
-              source of feed is Hacker News. TOHN is for those who want to spend
-              a good and finite amount of time (like coffee time) to catch up
-              with the daily hacker news.
+              Why The Times of Hacker News (TOHN) exists? because, Y
+              Combinator's Hacker News doesn't have an option to read only the
+              top news (by score, not by rank) for a given date. TOHN is just an
+              aggregator, source of feed is Hacker News. TOHN is for those who
+              want to spend a good and finite amount of time (like coffee time)
+              to catch up with the daily hacker news.
             </div>
             <div className="link">
               <a
@@ -86,7 +86,7 @@ export default function Work() {
 
         .work {
           width: 95%;
-          padding: 2rem 1rem 3rem 3rem;
+          padding: 2rem 2rem 3rem 3rem;
           background-color: #0e182a;
           color: #f0bd27;
           border-radius: 10px;
