@@ -1,31 +1,60 @@
 import Image from "next/image";
 
-function TOHNLogo() {
+function HNCafeLogo() {
   return (
     <div style={{ display: "flex", gap: "1rem" }}>
-      <h1
-        style={{
-          lineHeight: "1.8rem",
-          fontSize: "1.8rem",
-          fontFamily: "Poppins, sans-serif",
-          fontWeight: "bold",
-          color: "#f0bd27",
-          paddingTop: "2px",
-          margin: 0,
-        }}
-      >
-        THE TIMES OF <br />
-        HACKER NEWS
-      </h1>
       <div>
-        <Image src="/images/mug.png" width={36} height={50} alt="mug icon" />
-        <div
-          style={{
-            height: "3px",
-            width: "36px",
-            backgroundColor: "#f44b24",
-          }}
-        ></div>
+        <Image
+          src="/images/hn-cafe-logo.png"
+          width={118}
+          height={82}
+          alt="hn-cafe logo"
+        />
+      </div>
+    </div>
+  );
+}
+
+function CheetSheetsLogo() {
+  return (
+    <div style={{ display: "flex", gap: "1rem" }}>
+      <div>
+        <Image
+          src="/images/cheetsheets.png"
+          width={234}
+          height={33}
+          alt="cheetsheets logo"
+        />
+      </div>
+    </div>
+  );
+}
+
+function YesCodeLogo() {
+  return (
+    <div style={{ display: "flex", gap: "1rem" }}>
+      <div>
+        <Image
+          src="/images/yes-code.png"
+          width={312}
+          height={78}
+          alt="yes-code logo"
+        />
+      </div>
+    </div>
+  );
+}
+
+function JSGymLogo() {
+  return (
+    <div style={{ display: "flex", gap: "1rem" }}>
+      <div>
+        <Image
+          src="/images/jsgym.png"
+          width={156}
+          height={75}
+          alt="jsgym logo"
+        />
       </div>
     </div>
   );
@@ -39,28 +68,82 @@ export default function Work() {
           <h1>my work</h1>
         </div>
         <div className="works">
-          <div className="work">
+          <div className="work hn-cafe">
             <div className="logo">
-              <TOHNLogo />
+              <HNCafeLogo />
             </div>
             <div className="description">
-              Why The Times of Hacker News (TOHN) exists? because, Y
-              Combinator's Hacker News doesn't have an option to read only the
-              top news (by score, not by rank) for a given date. TOHN is just an
-              aggregator, source of feed is Hacker News. TOHN is for those who
-              want to spend a good and finite amount of time (like coffee time)
-              to catch up with the daily hacker news.
+              Why HackerNews.Cafe exists? because, Y Combinator's Hacker News
+              portal doesn't have an option to read only the top news (by score,
+              not by rank) for a given date. HN Cafe is just an aggregator,
+              source of feed is Hacker News. HN Cafe is for those who want to
+              spend a good and finite amount of time (like coffee time) to catch
+              up with the daily hacker news.
             </div>
             <div className="link">
               <a
-                href="https://timesofhacker.news"
+                href="https://hackernews.cafe"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                timesofhacker.news
+                hackernews.cafe
               </a>
             </div>
           </div>
+          <div className="work cheetsheets">
+            <div className="logo">
+              <CheetSheetsLogo />
+            </div>
+            <div className="description">
+              Cheetsheets.dev hosts cheatsheets for coding. Easy reach and handy
+              references.
+            </div>
+            <div className="link">
+              <a
+                href="https://cheetsheets.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                cheetsheets.dev
+              </a>
+            </div>
+          </div>
+          <div className="work yes-code">
+            <div className="logo">
+              <YesCodeLogo />
+            </div>
+            <div className="description">
+              Yes-code.dev is for yes-code developers in the era of no-code
+              development. Tool to keep code snippets and blocks.
+            </div>
+            <div className="link">
+              <a
+                href="https://yes-code.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                yes-code.dev
+              </a>
+            </div>
+          </div>
+          {/* <div className="work jsgym">
+            <div className="logo">
+              <JSGymLogo />
+            </div>
+            <div className="description">
+              Practice Javascript. Build your Javascript muscles. Equipped with
+              Javascript concepts.
+            </div>
+            <div className="link">
+              <a
+                href="https://yes-code.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                jsgym.dev
+              </a>
+            </div>
+          </div> */}
         </div>
       </div>
       <style jsx>{`
@@ -79,35 +162,61 @@ export default function Work() {
         .works {
           margin-top: 2rem;
           display: flex;
-          flex-direction: column;
-          align-items: center;
+          align-items: flex-start;
           gap: 2rem;
         }
 
         .work {
-          width: 95%;
-          padding: 2rem 2rem 3rem 3rem;
-          background-color: #0e182a;
+          width: calc(1 / 3 * 100%);
+          height: 85%;
+          padding: 1rem 2rem;
           color: #f0bd27;
           border-radius: 10px;
-          display: grid;
-          grid-template-columns: 30% 60%;
-          grid-template-rows: max-content;
-          gap: 2rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          gap: 1.5rem;
+        }
+
+        .hn-cafe {
+          background-color: #0e182a;
+          color: #f5f5f5;
+        }
+
+        .cheetsheets {
+          background-color: #e3dbbf;
+          color: #000000;
+        }
+
+        .yes-code {
+          background-color: #cccccc;
+          color: #000000;
+        }
+
+        .jsgym {
+          background-color: #d1d1d1;
+          color: #000000;
+        }
+
+        .logo {
+          height: calc(1 / 3 * 100%);
+          display: flex;
+          align-items: center;
         }
 
         .description {
-          color: #f5f5f5;
           line-height: 1.5rem;
+          height: calc(1 / 3 * 100%);
         }
 
         .link {
           display: flex;
           align-items: center;
+          height: calc(1 / 3 * 100%);
         }
 
         .link > a {
-          color: #81a7ff;
+          color: #0500ff;
           font-size: 1.2rem;
           font-weight: 400;
         }
