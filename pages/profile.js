@@ -23,10 +23,10 @@ function BulletPoint({ className, title, subtitle, description }) {
           background-color: #767676;
           border-radius: 10px;
           border: 2px solid #bcbcbc;
-          margin-right: 1rem;
         }
 
         .title {
+          margin-left: 1rem;
           color: #f5f5f5;
           font-size: 1.2rem;
           font-weight: 500;
@@ -46,6 +46,13 @@ function BulletPoint({ className, title, subtitle, description }) {
           border-left: 1px solid #3b3b3b;
           padding: 0 0 1rem 0.5rem;
           margin-left: 0.25rem;
+        }
+
+        @media (max-width: 1100px) {
+          .subtitle {
+            display: block;
+            margin-left: 1.5rem;
+          }
         }
       `}</style>
     </>

@@ -60,7 +60,7 @@ export default function NavBar() {
       <style jsx>{`
         #nav-bar {
           height: 80px;
-          width: 90%;
+          width: 65%;
           border-bottom: 2px solid #2c2c2c;
           color: #f5f5f5;
           font-size: 1.5rem;
@@ -71,8 +71,6 @@ export default function NavBar() {
           padding: 0 2rem;
           position: fixed;
           top: 0;
-          max-width: 1100px;
-          min-width: 900px;
           z-index: 1;
           background-color: #000;
           margin-top: 1rem;
@@ -95,6 +93,38 @@ export default function NavBar() {
           position: absolute;
           top: -30px;
           right: -18px;
+        }
+
+        @media (max-width: 1100px) {
+          #nav-bar {
+            width: 75%;
+          }
+        }
+
+        @media (max-width: 500px) {
+          #nav-bar {
+            height: 120px;
+            width: 85%;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+          }
+
+          #nav-items {
+            width: 100%;
+            align-content: center;
+            justify-content: space-evenly;
+            align-items: flex-end;
+          }
+
+          #home {
+            top: 10px;
+            left: -22px;
+          }
+
+          #lamp {
+            right: 15px;
+          }
         }
       `}</style>
     </>
