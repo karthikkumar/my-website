@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function HNCafeLogo() {
   return (
-    <div style={{ display: "flex", gap: "1rem" }}>
+    <div style={{ display: "flex", gap: "1rem", alignSelf: "center" }}>
       <div>
         <Image
           src="/images/hn-cafe-logo.png"
@@ -148,6 +148,7 @@ export default function Work() {
       </div>
       <style jsx>{`
         .content {
+          overflow: auto;
           margin: 80px 3rem 1rem 3rem;
           height: calc(100% - (80px + 1rem));
           display: grid;
@@ -162,19 +163,18 @@ export default function Work() {
         .works {
           margin-top: 2rem;
           display: flex;
+          flex-direction: column;
           align-items: flex-start;
           gap: 2rem;
         }
 
         .work {
-          width: calc(1 / 3 * 100%);
-          height: 85%;
-          padding: 1rem 2rem;
+          width: 100%;
+          padding: 2rem;
           color: #f0bd27;
           border-radius: 10px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+          display: grid;
+          grid-template-columns: 20% 80%;
           gap: 1.5rem;
         }
 
@@ -189,7 +189,7 @@ export default function Work() {
         }
 
         .yes-code {
-          background-color: #cccccc;
+          background-color: #a0a0a0;
           color: #000000;
         }
 
@@ -199,20 +199,18 @@ export default function Work() {
         }
 
         .logo {
-          height: calc(1 / 3 * 100%);
           display: flex;
           align-items: center;
         }
 
         .description {
+          align-self: "start";
           line-height: 1.5rem;
-          height: calc(1 / 3 * 100%);
         }
 
         .link {
           display: flex;
           align-items: center;
-          height: calc(1 / 3 * 100%);
         }
 
         .link > a {

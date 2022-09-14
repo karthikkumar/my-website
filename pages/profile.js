@@ -277,6 +277,7 @@ export default function Profile() {
           grid-template-areas:
             "header  header"
             "experience skills";
+          overflow: auto;
         }
 
         .header {
@@ -352,7 +353,6 @@ export default function Profile() {
 
         @media (max-width: 1100px) {
           .content {
-            overflow: auto;
             grid-template-columns: 1fr;
             grid-template-areas:
               "header"
