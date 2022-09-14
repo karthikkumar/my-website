@@ -148,6 +148,7 @@ export default function Work() {
       </div>
       <style jsx>{`
         .content {
+          width: 85%;
           overflow: auto;
           margin: 80px 3rem 1rem 3rem;
           height: calc(100% - (80px + 1rem));
@@ -246,7 +247,7 @@ export default function Work() {
 
         @media (max-width: 500px) {
           .content {
-            margin: 120px 1rem 1rem 1rem;
+            margin: 140px 1rem 1rem 1rem;
           }
         }
       `}</style>

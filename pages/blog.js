@@ -16,11 +16,13 @@ export default function Blog() {
       </div>
       <style jsx>{`
         .content {
+          width: 85%;
           margin: 80px 3rem 1rem 3rem;
           height: calc(100% - (80px + 1rem));
           display: grid;
           grid-template-columns: 100%;
           grid-template-rows: 80px auto;
+          overflow: auto;
         }
 
         h1 {
@@ -48,6 +50,16 @@ export default function Blog() {
 
         .post > .date {
           color: #767676;
+        }
+
+        @media (max-width: 500px) {
+          .content {
+            margin: 140px 3rem 1rem 3rem;
+          }
+
+          .post {
+            width: 100%;
+          }
         }
       `}</style>
     </>

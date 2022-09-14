@@ -42,6 +42,12 @@ export default function Layout({ children }) {
             width: 90%;
           }
         }
+        @media (max-width: 500px) {
+          #main {
+            width: 100%;
+            margin: 0;
+          }
+        }
       `}</style>
     </>
   );

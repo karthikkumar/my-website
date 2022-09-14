@@ -92,7 +92,7 @@ export default function Profile() {
           </button>
         </div>
         <div id="work-experience">
-          <h3 className="section-title">work experience</h3>
+          <h3 className="section-title">Work Experiences</h3>
           <div className="experiences">
             <BulletPoint
               className="experience"
@@ -123,7 +123,7 @@ export default function Profile() {
           </div>
         </div>
         <div id="skills">
-          <h3 className="section-title">skills</h3>
+          <h3 className="section-title">Skills</h3>
           <div>
             <div className="skills-section">
               <h4>Web Frontend</h4>
@@ -270,6 +270,7 @@ export default function Profile() {
       </div>
       <style jsx>{`
         .content {
+          width: 85%;
           margin: 80px 3rem 1rem 3rem;
           height: calc(100% - (80px + 1rem));
           display: grid;
@@ -277,6 +278,7 @@ export default function Profile() {
           grid-template-areas:
             "header  header"
             "experience skills";
+          grid-template-rows: 80px auto;
           overflow: auto;
         }
 
@@ -325,7 +327,6 @@ export default function Profile() {
         .section-title {
           color: #767676;
           margin-bottom: 2rem;
-          text-decoration: underline;
         }
 
         .experience {
@@ -353,19 +354,17 @@ export default function Profile() {
 
         @media (max-width: 1100px) {
           .content {
+            margin: 80px 2rem 1rem 2rem;
             grid-template-columns: 1fr;
+            grid-template-rows: 80px auto;
             grid-template-areas:
               "header"
               "experience"
               "skills";
           }
 
-          h1.page-title {
-            padding-left: 3rem;
-          }
-
           #work-experience {
-            padding: 2rem 2rem 2rem 3rem;
+            padding: 1rem 2rem 1rem 2rem;
           }
 
           #skills {
@@ -375,7 +374,8 @@ export default function Profile() {
 
         @media (max-width: 500px) {
           .content {
-            margin: 120px 1rem 1rem 1rem;
+            margin: 140px 0 1rem 0;
+            grid-template-rows: 120px auto;
           }
 
           .header {
@@ -386,17 +386,12 @@ export default function Profile() {
           }
 
           h1.page-title {
-            padding-left: 1rem;
             font-size: 2rem;
-          }
-
-          button.resume {
-            margin-left: 1rem;
           }
 
           #work-experience,
           #skills {
-            padding: 1rem;
+            padding: 1rem 0;
           }
         }
       `}</style>
