@@ -80,7 +80,7 @@ export default function Work() {
               spend a good and finite amount of time (like coffee time) to catch
               up with the daily hacker news.
             </div>
-            <div className="link">
+            <div className="link light-link">
               <a
                 href="https://hackernews.cafe"
                 target="_blank"
@@ -98,7 +98,7 @@ export default function Work() {
               Cheetsheets.dev hosts cheatsheets for coding. Easy reach and handy
               references.
             </div>
-            <div className="link">
+            <div className="link dark-link">
               <a
                 href="https://cheetsheets.dev"
                 target="_blank"
@@ -116,7 +116,7 @@ export default function Work() {
               Yes-code.dev is for yes-code developers in the era of no-code
               development. Tool to keep code snippets and blocks.
             </div>
-            <div className="link">
+            <div className="link dark-link">
               <a
                 href="https://yes-code.dev"
                 target="_blank"
@@ -174,7 +174,10 @@ export default function Work() {
           color: #f0bd27;
           border-radius: 10px;
           display: grid;
-          grid-template-columns: 20% 80%;
+          grid-template-columns: 1.5fr 3.5fr;
+          grid-template-areas:
+            "logo  description"
+            "link link";
           gap: 1.5rem;
         }
 
@@ -199,24 +202,52 @@ export default function Work() {
         }
 
         .logo {
+          grid-area: logo;
           display: flex;
           align-items: center;
         }
 
         .description {
+          grid-area: description;
           align-self: "start";
           line-height: 1.5rem;
+          margin-right: 2rem;
         }
 
         .link {
+          grid-area: link;
           display: flex;
           align-items: center;
         }
 
         .link > a {
-          color: #0500ff;
           font-size: 1.2rem;
           font-weight: 400;
+        }
+
+        .dark-link > a {
+          color: #0500ff;
+        }
+
+        .light-link > a {
+          color: #8ab4f8;
+        }
+
+        @media (max-width: 1100px) {
+          .work {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "logo"
+              "description"
+              "link";
+            gap: 1.5rem;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .content {
+            margin: 120px 1rem 1rem 1rem;
+          }
         }
       `}</style>
     </>
