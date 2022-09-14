@@ -282,6 +282,16 @@ export default function Profile() {
           overflow: auto;
         }
 
+        .content {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          overflow-y: scroll;
+        }
+
+        .content::-webkit-scrollbar {
+          display: none;
+        }
+
         .header {
           grid-area: header;
           display: flex;

@@ -245,6 +245,16 @@ export default function Work() {
           }
         }
 
+        .content {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          overflow-y: scroll;
+        }
+
+        .content::-webkit-scrollbar {
+          display: none;
+        }
+
         @media (max-width: 500px) {
           .content {
             margin: 140px 1rem 1rem 1rem;
