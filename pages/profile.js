@@ -44,7 +44,7 @@ function BulletPoint({ className, title, subtitle, description }) {
           font-size: 1rem;
           font-weight: 300;
           border-left: 1px solid #3b3b3b;
-          padding: 0 0 1rem 0.5rem;
+          padding: 0 0 1rem 1.5rem;
           margin-left: 0.25rem;
         }
 
@@ -111,13 +111,13 @@ export default function Profile() {
             <BulletPoint
               className="experience"
               title="Cognizant"
-              subtitle="(Jun 2011 - Nov 2015) - Chennai, India"
+              subtitle="(Jun 2011 - Nov 2015) - Chennai"
               description="Joined as a junior programmer and with proven skillsets has given the opportunity to work with multiple platforms and domains."
             />
             <BulletPoint
               className="experience"
               title="Changepond"
-              subtitle="(Apr 2010 - Jun 2011) - Chennai, India"
+              subtitle="(Apr 2010 - Jun 2011) - Chennai"
               description="As a budding software developer gained software development skills and inspiration."
             />
           </div>
@@ -273,12 +273,14 @@ export default function Profile() {
           margin: 80px 3rem 1rem 3rem;
           height: calc(100% - (80px + 1rem));
           display: grid;
-          grid-template-columns: 50% 50%;
-          grid-template-rows: 80px auto;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "header  header"
+            "experience skills";
         }
 
         .header {
-          grid-column: 1 / span 3;
+          grid-area: header;
           display: flex;
           gap: 3rem;
           align-items: center;
@@ -305,12 +307,14 @@ export default function Profile() {
         }
 
         #work-experience {
+          grid-area: experience;
           padding: 2rem 4rem 2rem 0;
           width: 100%;
           height: 100%;
         }
 
         #skills {
+          grid-area: skills;
           padding: 2rem 2rem 2rem 3rem;
           width: 100%;
           height: 100%;
@@ -320,6 +324,7 @@ export default function Profile() {
         .section-title {
           color: #767676;
           margin-bottom: 2rem;
+          text-decoration: underline;
         }
 
         .experience {
@@ -343,6 +348,56 @@ export default function Profile() {
         .skill-set {
           display: flex;
           flex-wrap: wrap;
+        }
+
+        @media (max-width: 1100px) {
+          .content {
+            overflow: auto;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+              "header"
+              "experience"
+              "skills";
+          }
+
+          h1.page-title {
+            padding-left: 3rem;
+          }
+
+          #work-experience {
+            padding: 2rem 2rem 2rem 3rem;
+          }
+
+          #skills {
+            border-left: 0;
+          }
+        }
+
+        @media (max-width: 500px) {
+          .content {
+            margin: 120px 1rem 1rem 1rem;
+          }
+
+          .header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+          }
+
+          h1.page-title {
+            padding-left: 1rem;
+            font-size: 2rem;
+          }
+
+          button.resume {
+            margin-left: 1rem;
+          }
+
+          #work-experience,
+          #skills {
+            padding: 1rem;
+          }
         }
       `}</style>
     </>
