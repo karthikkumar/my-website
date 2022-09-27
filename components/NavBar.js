@@ -33,7 +33,7 @@ function NavItem({ name }) {
 
 export default function NavBar() {
   const router = useRouter();
-  const { colors, toggleDarkMode } = useThemeContext();
+  const { colors, toggleDarkMode, darkMode } = useThemeContext();
   return (
     <>
       <div id="nav-bar">
@@ -64,7 +64,9 @@ export default function NavBar() {
             toggleDarkMode();
           }}
         >
-          <Image src="/images/lamp.png" width={35} height={68} alt="lamp" />
+          <div id={darkMode ? "glow" : ""}>
+            <Image src="/images/lamp.png" width={35} height={68} alt="lamp" />
+          </div>
         </div>
       </div>
       <style jsx>{`
@@ -99,9 +101,31 @@ export default function NavBar() {
         }
 
         #lamp {
+          cursor: pointer;
           position: absolute;
           top: -30px;
           right: -18px;
+        }
+
+        #glow:before {
+          content: "";
+          position: absolute;
+          background-image: linear-gradient(to bottom, #000, #fff);
+          opacity: 0.6;
+          width: 5px;
+          height: 5px;
+          top: 80%;
+          left: 45%;
+          border-radius: 50%;
+          transition: all 0.2s ease-in-out;
+          z-index: -1;
+        }
+
+        #glow:hover::before {
+          width: 72px;
+          height: 72px;
+          margin-left: -36px;
+          margin-top: -36px;
         }
 
         @media (max-width: 1100px) {

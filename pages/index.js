@@ -172,6 +172,12 @@ export default function Index() {
           }
         }
 
+        @media (max-height: 800px) {
+          #content {
+            margin-top: 20vh;
+          }
+        }
+
         @media (max-width: 500px) {
           #profile-pic {
             width: 6rem;
@@ -185,9 +191,23 @@ export default function Index() {
           }
         }
 
-        @media (max-height: 800px) {
+        @media (max-height: 600px) {
           #content {
-            margin-top: 20vh;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            overflow-y: scroll;
+          }
+
+          #content::-webkit-scrollbar {
+            display: none;
+          }
+
+          #profile-pic {
+            margin-top: 400px;
+          }
+
+          #social-profiles {
+            margin-bottom: 50px;
           }
         }
       `}</style>
