@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useThemeContext } from "../components/ThemeProvider";
 
 function HNCafeLogo() {
   return (
@@ -61,6 +62,7 @@ function JSGymLogo() {
 }
 
 export default function Work() {
+  const { colors } = useThemeContext();
   return (
     <>
       <div className="content">
@@ -158,7 +160,7 @@ export default function Work() {
         }
 
         h1 {
-          color: #f5f5f5;
+          color: ${colors.pageTitle};
         }
 
         .works {
@@ -173,7 +175,7 @@ export default function Work() {
           width: 100%;
           padding: 2rem;
           color: #f0bd27;
-          border-radius: 10px;
+          border-radius: 25px;
           display: grid;
           grid-template-columns: 1.5fr 3.5fr;
           grid-template-areas:

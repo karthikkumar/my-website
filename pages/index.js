@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useThemeContext } from "../components/ThemeProvider";
 
 const openInNewTab = (event, url) => {
   event.preventDefault();
@@ -6,6 +7,8 @@ const openInNewTab = (event, url) => {
 };
 
 export default function Index() {
+  const { darkMode, colors } = useThemeContext();
+  const iconSuffix = darkMode ? "dark" : "light";
   return (
     <>
       <div id="content">
@@ -36,7 +39,7 @@ export default function Index() {
               }
             >
               <Image
-                src="/images/github.png"
+                src={`/images/github-${iconSuffix}.png`}
                 width={40}
                 height={40}
                 alt="github"
@@ -53,7 +56,7 @@ export default function Index() {
               }
             >
               <Image
-                src="/images/in.png"
+                src={`/images/in-${iconSuffix}.png`}
                 width={35}
                 height={35}
                 alt="linkedin"
@@ -67,7 +70,7 @@ export default function Index() {
               }
             >
               <Image
-                src="/images/email.png"
+                src={`/images/email-${iconSuffix}.png`}
                 width={38}
                 height={24}
                 alt="email"
@@ -81,7 +84,7 @@ export default function Index() {
               }
             >
               <Image
-                src="/images/whatsapp.png"
+                src={`/images/whatsapp-${iconSuffix}.png`}
                 width={32}
                 height={32}
                 alt="whatsapp"
@@ -95,7 +98,7 @@ export default function Index() {
               }
             >
               <Image
-                src="/images/twitter.png"
+                src={`/images/twitter-${iconSuffix}.png`}
                 width={33}
                 height={26}
                 alt="twitter"
@@ -118,8 +121,8 @@ export default function Index() {
         #profile-pic {
           width: 10rem;
           height: 10rem;
-          background-color: #302f2f;
-          border: 4px solid #494848;
+          background-color: ${colors.profileBg};
+          border: 4px solid ${colors.profileBorder};
           border-radius: 1rem;
           align-self: flex-start;
         }
@@ -128,7 +131,7 @@ export default function Index() {
           display: flex;
           gap: 0.6rem;
           flex-direction: column;
-          color: #f5f5f5;
+          color: ${colors.profileText};
           width: 500px;
         }
 

@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { useThemeContext } from "../components/ThemeProvider";
 
 function BulletPoint({ className, title, subtitle, description }) {
+  const { colors } = useThemeContext();
   return (
     <>
       <div className={className}>
@@ -27,20 +29,20 @@ function BulletPoint({ className, title, subtitle, description }) {
 
         .title {
           margin-left: 1rem;
-          color: #f5f5f5;
+          color: ${colors.expText};
           font-size: 1.2rem;
           font-weight: 500;
         }
 
         .subtitle {
           margin-left: 0.5rem;
-          color: #bcbcbc;
+          color: ${colors.expDescription};
           font-size: 0.9rem;
           font-weight: 400;
         }
 
         .description {
-          color: #f5f5f5;
+          color: ${colors.expText};
           font-size: 1rem;
           font-weight: 300;
           border-left: 1px solid #3b3b3b;
@@ -68,7 +70,7 @@ function Skill({ url, width, height = 32, alt }) {
       <style jsx>{`
         .skill {
           display: inline-block;
-          border: 4px solid #000;
+          border: 4px solid transparent;
         }
       `}</style>
     </>
@@ -76,6 +78,7 @@ function Skill({ url, width, height = 32, alt }) {
 }
 
 export default function Profile() {
+  const { colors } = useThemeContext();
   return (
     <>
       <div className="content">
@@ -300,7 +303,7 @@ export default function Profile() {
         }
 
         h1.page-title {
-          color: #f5f5f5;
+          color: ${colors.pageTitle};
         }
 
         button.resume {
@@ -331,7 +334,7 @@ export default function Profile() {
           padding: 2rem 2rem 2rem 3rem;
           width: 100%;
           height: 100%;
-          border-left: 2px solid #212121;
+          border-left: 2px solid ${colors.colDivider};
         }
 
         .section-title {
@@ -344,13 +347,9 @@ export default function Profile() {
         }
 
         h4 {
-          color: #f5f5f5;
+          color: ${colors.skillText};
           font-size: 1rem;
           margin-bottom: 1rem;
-        }
-
-        .skill {
-          border: 2px solid #000;
         }
 
         .skills-section {

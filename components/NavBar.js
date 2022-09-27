@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useContext } from "react";
+import { useThemeContext } from "./ThemeProvider";
 
 function NavItem({ name }) {
   const router = useRouter();
   const path = `/${name}`;
   const className = "nav-item" + (router.pathname === path ? " highlight" : "");
+  const { colors } = useThemeContext();
   return (
     <>
       <Link href={path}>
@@ -16,11 +19,11 @@ function NavItem({ name }) {
           .nav-item {
             border-bottom: 2px solid transparent;
             text-decoration: none;
-            color: #f5f5f5;
+            color: ${colors.navText};
           }
 
           .highlight {
-            border-bottom: 2px solid #007ced;
+            border-bottom: 2px solid ${colors.highlight};
           }
         `}
       </style>
@@ -30,6 +33,7 @@ function NavItem({ name }) {
 
 export default function NavBar() {
   const router = useRouter();
+  const { colors, toggleDarkMode } = useThemeContext();
   return (
     <>
       <div id="nav-bar">
@@ -53,7 +57,13 @@ export default function NavBar() {
           <NavItem name="work" />
           <NavItem name="blog" />
         </div>
-        <div id="lamp">
+        <div
+          id="lamp"
+          onClick={(event) => {
+            event.stopPropagation();
+            toggleDarkMode();
+          }}
+        >
           <Image src="/images/lamp.png" width={35} height={68} alt="lamp" />
         </div>
       </div>
@@ -61,8 +71,7 @@ export default function NavBar() {
         #nav-bar {
           height: 80px;
           width: 65%;
-          border-bottom: 2px solid #2c2c2c;
-          color: #f5f5f5;
+          border-bottom: 2px solid ${colors.navbarBorder};
           font-size: 1.5rem;
           display: flex;
           flex-direction: row;
@@ -72,7 +81,7 @@ export default function NavBar() {
           position: fixed;
           top: 0;
           z-index: 1;
-          background-color: #000;
+          background-color: ${colors.navbarBg};
           margin-top: 1rem;
         }
 

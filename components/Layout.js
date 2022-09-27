@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import Head from "next/head";
 import NavBar from "./NavBar";
+import { useThemeContext } from "./ThemeProvider";
 
 export default function Layout({ children }) {
+  const { colors } = useThemeContext();
   return (
     <>
       <Head>
@@ -17,7 +20,7 @@ export default function Layout({ children }) {
           position: fixed;
           width: 100vw;
           height: 100vh;
-          background-color: #090909;
+          background-color: ${colors.app};
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -27,7 +30,7 @@ export default function Layout({ children }) {
         #main {
           width: 75%;
           height: 100%;
-          background-color: #000;
+          background-color: ${colors.main};
           margin: 1rem 0;
           border-radius: 1rem;
           overflow: hidden;

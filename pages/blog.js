@@ -1,4 +1,7 @@
+import { useThemeContext } from "../components/ThemeProvider";
+
 export default function Blog() {
+  const { colors } = useThemeContext();
   return (
     <>
       <div className="content">
@@ -26,7 +29,7 @@ export default function Blog() {
         }
 
         h1 {
-          color: #f5f5f5;
+          color: ${colors.pageTitle};
         }
 
         .blogs {
@@ -39,13 +42,13 @@ export default function Blog() {
 
         .post {
           width: 70%;
-          border-bottom: 1px solid #212121;
+          border-bottom: 1px solid ${colors.blogDivider};
         }
 
         .post > .title {
           font-size: 1.4rem;
           font-weight: 400;
-          color: #f5f5f5;
+          color: ${colors.blogTitle};
         }
 
         .post > .date {
